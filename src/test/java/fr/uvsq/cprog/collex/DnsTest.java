@@ -33,7 +33,7 @@ public class DnsTest {
     // Add record
     dns.addItem(new AdresseIP("8.8.8.8"), new NomMachine("google.com"));
 
-    // Check  IP
+    // Check IP
     DnsItem item1 = dns.getItem(new AdresseIP("8.8.8.8"));
     assertEquals("google.com", item1.getNom().getNom());
 
