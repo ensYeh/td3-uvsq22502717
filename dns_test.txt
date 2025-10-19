@@ -1,0 +1,3 @@
+a.cloudflare.com 1.1.1.1
+b.cloudflare.com 1.0.0.1
+google.com 8.8.8.8
