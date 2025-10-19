@@ -25,6 +25,14 @@
       <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>31.1-jre</version>
+    </dependency>
+
+
   </dependencies>
 
   <build>
@@ -33,7 +41,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.2.2</version> <!-- Stable version -->
+                <version>3.3.1</version> <!-- стабильная версия, точно существует -->
+                <dependencies>
+                    <!-- Принудительно подгружаем современную Guava, чтобы избежать NoSuchMethodError -->
+                    <dependency>
+                        <groupId>com.google.guava</groupId>
+                        <artifactId>guava</artifactId>
+                        <version>31.1-jre</version>
+                    </dependency>
+                </dependencies>
                 <configuration>
                     <configLocation>google_checks.xml</configLocation>
                     <encoding>UTF-8</encoding>
@@ -49,6 +65,7 @@
                     </execution>
                 </executions>
             </plugin>
+
 
 
             <plugin>
